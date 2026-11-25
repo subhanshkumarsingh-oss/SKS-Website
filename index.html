@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d1d">
+<title>SKS | Shubhansh Kumar Singh</title>
+<style>
+:root{--bg:#080d1d;--panel:#101a31;--panel2:#14213d;--text:#edf3ff;--muted:#a8b5cf;--cyan:#55d6ff;--violet:#9b8cff;--line:rgba(255,255,255,.11)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0%,#1c2850 0,transparent 32%),var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:5;background:rgba(8,13,29,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:900;letter-spacing:1px;font-size:1.35rem}.logo span{color:var(--cyan)}
+.links{display:flex;gap:24px;color:var(--muted);font-size:.94rem}.links a:hover{color:var(--cyan)}.menu{display:none;background:none;border:1px solid var(--line);color:white;padding:8px 12px;border-radius:9px}
+.hero{padding:100px 0 80px;display:grid;grid-template-columns:1.3fr .7fr;gap:50px;align-items:center;min-height:590px}
+.eyebrow{color:var(--cyan);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:.78rem}
+h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.04;margin:18px 0}.gradient{background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:1.1rem;max-width:620px}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:12px;font-weight:750;border:1px solid var(--line);cursor:pointer}.primary{background:linear-gradient(110deg,#4bcdf6,#8f83ff);color:#07101e;border:0}.secondary{background:rgba(255,255,255,.04)}
+.profile{min-height:320px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(85,214,255,.12),rgba(155,140,255,.13));display:grid;place-items:center;position:relative;overflow:hidden}
+.orb{width:190px;height:190px;border-radius:50%;display:grid;place-items:center;font-size:4rem;font-weight:900;color:#07101e;background:linear-gradient(135deg,var(--cyan),var(--violet));box-shadow:0 0 90px rgba(85,214,255,.25)}
+.profile small{position:absolute;bottom:24px;color:var(--muted)}
+section{padding:76px 0}.section-head{margin-bottom:30px}.section-head h2{font-size:2.2rem;margin:4px 0}.section-head p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(150deg,rgba(20,33,61,.92),rgba(13,22,42,.94));border:1px solid var(--line);border-radius:18px;padding:24px}.card h3{margin:8px 0}.card p{color:var(--muted);margin-bottom:0}.icon{font-size:1.6rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.tag{font-size:.78rem;padding:6px 10px;border-radius:30px;background:rgba(85,214,255,.09);color:#a8eaff;border:1px solid rgba(85,214,255,.18)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:22px}.about .card{height:100%}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}.stat{padding:14px;background:rgba(255,255,255,.04);border-radius:12px}.stat b{display:block;color:var(--cyan);font-size:1.2rem}
+.assistant{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}.chat{min-height:350px;display:flex;flex-direction:column}.messages{flex:1;max-height:280px;overflow:auto;display:flex;flex-direction:column;gap:12px;margin:10px 0 18px}.bubble{padding:12px 14px;border-radius:14px;max-width:90%;background:#1a2948;color:#e9f2ff}.bubble.user{align-self:flex-end;background:#294b69}.chatform{display:flex;gap:8px}.chatform input{min-width:0;flex:1;background:#091326;border:1px solid var(--line);border-radius:10px;padding:12px;color:white}.chatform button{border:0;border-radius:10px;padding:0 16px;background:var(--cyan);font-weight:800;color:#07101e}
+form.contact{display:grid;gap:12px}form.contact input,form.contact textarea{width:100%;background:#091326;border:1px solid var(--line);border-radius:10px;padding:13px;color:white;font:inherit}form.contact textarea{min-height:120px;resize:vertical}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);text-align:center;font-size:.9rem}
+.notice{font-size:.82rem;color:#a8b5cf;margin-top:12px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:70px 0 45px}.profile{min-height:250px}.grid{grid-template-columns:1fr}.about,.assistant{grid-template-columns:1fr}.links{display:none;position:absolute;top:72px;left:0;right:0;background:#0b1327;padding:20px;flex-direction:column;border-bottom:1px solid var(--line)}.links.show{display:flex}.menu{display:block}section{padding:58px 0}.stats{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<header><nav class="wrap">
+<a class="logo" href="#home">SK<span>S.</span></a>
+<div class="links" id="navlinks"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#assistant">AI Study Assistant</a><a href="#contact">Contact</a></div>
+<button class="menu" onclick="document.getElementById('navlinks').classList.toggle('show')">Menu</button>
+</nav></header>
+<main>
+<section class="wrap hero" id="home">
+<div><div class="eyebrow">Computer Science • AI & Machine Learning</div>
+<h1>Hi, I'm <span class="gradient">Shubhansh Kumar Singh.</span></h1>
+<p class="lead">A CSE student exploring technology, programming and intelligent solutions. I enjoy learning, building projects and turning ideas into practical digital experiences.</p>
+<div class="actions"><a class="btn primary" href="#projects">Explore Projects ↗</a><a class="btn secondary" href="#contact">Get in Touch</a></div>
+</div>
+<div class="profile"><div class="orb">SKS</div><small>Learn • Build • Innovate</small></div>
+</section>
+<section id="about"><div class="wrap">
+<div class="section-head"><div class="eyebrow">A little about me</div><h2>About Me</h2><p>Curious mind. Continuous learner. Future-focused builder.</p></div>
+<div class="about"><div class="card"><h3>My journey</h3><p>I'm pursuing B.Tech in Computer Science and Engineering at IILM University, Greater Noida. I'm interested in AI/ML, data science and software development, and I'm steadily strengthening my programming and problem-solving skills.</p><div class="stats"><div class="stat"><b>CSE</b><span>Domain</span></div><div class="stat"><b>AI/ML</b><span>Interest</span></div><div class="stat"><b>Build</b><span>Mindset</span></div></div></div>
+<div class="card"><h3>Skills I'm developing</h3><p>My current learning areas and tools.</p><div class="tags"><span class="tag">Python</span><span class="tag">C++</span><span class="tag">Data Science</span><span class="tag">Machine Learning</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Power BI</span><span class="tag">GitHub</span></div></div></div>
+</div></section>
+<section id="services"><div class="wrap"><div class="section-head"><div class="eyebrow">What I work on</div><h2>Services & Interests</h2><p>Areas where I learn, experiment and create.</p></div>
+<div class="grid"><article class="card"><div class="icon">🤖</div><h3>AI & ML Exploration</h3><p>Learning machine learning concepts, data preparation and beginner-friendly predictive models.</p></article><article class="card"><div class="icon">📊</div><h3>Data Analysis</h3><p>Exploring datasets, creating visualizations and communicating insights through dashboards.</p></article><article class="card"><div class="icon">💻</div><h3>Web Development</h3><p>Building clean, responsive web pages and practical interfaces using modern web basics.</p></article></div>
+</div></section>
+<section id="projects"><div class="wrap"><div class="section-head"><div class="eyebrow">Selected work</div><h2>Projects</h2><p>A few project directions from my learning journey.</p></div>
+<div class="grid"><article class="card"><div class="icon">🎓</div><h3>Student Performance Prediction</h3><p>A machine learning project concept to explore how study-related factors may relate to student outcomes.</p><div class="tags"><span class="tag">Python</span><span class="tag">ML</span><span class="tag">Data Analysis</span></div></article><article class="card"><div class="icon">📈</div><h3>HR Analytics Dashboard</h3><p>An interactive dashboard concept for understanding workforce trends and business metrics.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">Visualization</span></div></article><article class="card"><div class="icon">💬</div><h3>Sentiment Analysis</h3><p>Exploring text sentiment and comparing sentiment scores with user ratings.</p><div class="tags"><span class="tag">NLP</span><span class="tag">Python</span></div></article></div>
+</div></section>
+<section id="assistant"><div class="wrap"><div class="section-head"><div class="eyebrow">Your learning companion</div><h2>AI Study Assistant</h2><p>Ask a study question and try this built-in demo assistant.</p></div>
+<div class="assistant"><div class="card"><h3>Study smarter</h3><p>Use the assistant to get a simple explanation, revision pointers or a quick quiz prompt.</p><div class="tags"><span class="tag">Concept explanations</span><span class="tag">Revision help</span><span class="tag">Practice questions</span></div><p class="notice">Demo mode: this sample replies with preset guidance. Connect an AI API through a secure backend to enable real AI answers.</p></div>
+<div class="card chat"><div class="messages" id="messages"><div class="bubble">Hello! 👋 I'm the SKS Study Assistant demo. Ask me about Python, C++, data science, AI/ML or networking.</div></div><form class="chatform" id="chatform"><input id="question" placeholder="Ask a study question..." autocomplete="off" required><button>Send</button></form></div></div>
+</div></section>
+<section id="contact"><div class="wrap"><div class="section-head"><div class="eyebrow">Let's connect</div><h2>Contact Me</h2><p>Have an idea, project or opportunity? Send a message.</p></div>
+<div class="about"><div class="card"><h3>Shubhansh Kumar Singh</h3><p>Computer Science & Engineering student<br>Greater Noida, Uttar Pradesh, India</p><p class="notice">Add your professional email and social profile links here before publishing.</p></div>
+<div class="card"><form class="contact" onsubmit="event.preventDefault();alert('Thanks! This demo form is not connected to email yet. Add a form service or backend to receive messages.');"><input placeholder="Your name" required><input type="email" placeholder="Your email" required><textarea placeholder="Your message" required></textarea><button class="btn primary" type="submit">Send Message</button></form></div></div>
+</div></section>
+</main>
+<footer>© <span id="year"></span> SKS — Shubhansh Kumar Singh. Built with curiosity.</footer>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const form=document.getElementById('chatform'), input=document.getElementById('question'), messages=document.getElementById('messages');
+function reply(q){const s=q.toLowerCase();if(s.includes('python'))return 'Python is a beginner-friendly programming language. Start with variables, data types, conditions, loops, functions, lists and dictionaries, then practise small programs.';if(s.includes('c++')||s.includes('cpp'))return 'In C++, learn the basics first: input/output, data types, operators, if-else, loops, functions, arrays, strings, pointers and OOP. Practise one problem at a time.';if(s.includes('machine learning')||s.includes('ai/ml')||s.includes('ml'))return 'A good ML workflow is: define the problem, collect data, clean and explore it, split into train/test sets, train a model, evaluate it and explain the results.';if(s.includes('data science'))return 'Data science combines statistics, programming and domain knowledge to extract useful insights from data. A typical workflow includes collection, cleaning, exploration, modelling and communication.';if(s.includes('tcp')||s.includes('udp')||s.includes('network'))return 'TCP is connection-oriented and provides reliable, ordered delivery. UDP is connectionless and has lower overhead, so it is useful when speed matters, such as live streaming or gaming.';return 'Good question! Try breaking it into smaller concepts. Write what you already know, identify the confusing part, and practise with one simple example. This is a demo assistant; connect an AI backend for generated answers.';}
+form.addEventListener('submit',e=>{e.preventDefault();const q=input.value.trim();if(!q)return;const u=document.createElement('div');u.className='bubble user';u.textContent=q;messages.appendChild(u);const a=document.createElement('div');a.className='bubble';a.textContent=reply(q);messages.appendChild(a);input.value='';messages.scrollTop=messages.scrollHeight;});
+</script>
+</body></html>
